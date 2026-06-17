@@ -4,6 +4,7 @@ import ServicesSection from "../components/ServicesSection";
 import About from "../components/About";
 import Gallery from "../components/Gallery";
 import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 
 
 export default function Home(){
@@ -23,6 +24,8 @@ return (
 <Gallery />
 
 <Contact/>
+
+<Footer/>
 
 </main>
 
