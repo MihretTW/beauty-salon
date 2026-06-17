@@ -1,20 +1,27 @@
-import Navbar from "@/components/Navbar"
+import { supabase } from "../lib/supabase";
 
-export default function Home(){
+export default async function Services() {
 
-return (
+  const { data, error } = await supabase
+    .from("services")
+    .select("*");
 
-<main>
+  const { data: test } = await supabase
+    .rpc("version");
 
-<Navbar />
+  return (
+    <div>
 
-<h1>
-Welcome to our Beauty Salon
-</h1>
+      <h1>Services</h1>
 
+      <pre>
+        {JSON.stringify(
+          {data, error},
+          null,
+          2
+        )}
+      </pre>
 
-</main>
-
-)
-
+    </div>
+  );
 }
