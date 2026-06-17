@@ -1,22 +1,32 @@
-export default function Navbar(){
+export default function Navbar() {
+  return (
+    <nav className="flex items-center justify-between px-10 py-5 bg-white shadow">
 
-return (
-<nav className="flex justify-between p-6">
+      <h1 className="text-2xl font-bold text-pink-600">
+        Eden Beauty
+      </h1>
 
-<h1 className="text-2xl">
-Eden Beauty 
-</h1>
 
-<div className="space-x-5">
+      <div className="flex gap-8">
 
-<a>Home</a>
-<a>Services</a>
-<a>Gallery</a>
-<a>Contact</a>
+        <a href="/">
+          Home
+        </a>
 
-</div>
+        <a href="/services">
+          Services
+        </a>
 
-</nav>
-)
+        <a href="/gallery">
+          Gallery
+        </a>
 
+        <a href="/contact">
+          Contact
+        </a>
+
+      </div>
+
+    </nav>
+  );
 }

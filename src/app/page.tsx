@@ -1,27 +1,24 @@
-import { supabase } from "../lib/supabase";
+import Navbar from "../components/Navbar";
+import Hero from "../components/Hero";
+import ServicesSection from "../components/ServicesSection";
+import About from "../components/About";
 
-export default async function Services() {
+export default function Home(){
 
-  const { data, error } = await supabase
-    .from("services")
-    .select("*");
+return (
 
-  const { data: test } = await supabase
-    .rpc("version");
+<main>
 
-  return (
-    <div>
+<Navbar />
 
-      <h1>Services</h1>
+<Hero />
 
-      <pre>
-        {JSON.stringify(
-          {data, error},
-          null,
-          2
-        )}
-      </pre>
+<About/>
 
-    </div>
-  );
+<ServicesSection />
+
+</main>
+
+)
+
 }
