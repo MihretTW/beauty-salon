@@ -21,9 +21,18 @@ export default function AdminServices() {
       .order("id");
 
 
-    if(!error){
-      setServices(data);
-    }
+   if(!error){
+
+  console.log("SERVICES:", data);
+
+  setServices(data);
+
+}
+else{
+
+  console.log("ERROR:", error);
+
+}
 
   }
 
@@ -103,6 +112,8 @@ return (
 <h1 className="text-3xl font-bold">
 Manage Services
 </h1>
+
+
 
 
 
