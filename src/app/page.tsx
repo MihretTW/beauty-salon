@@ -18,17 +18,28 @@ return (
 
 <Navbar />
 
-<Hero />
+<Hero/>
 
-<About/>
+ <section id="about">
+    <About/>
+</section>
 
-<ServicesSection />
+<section id="services">
+    <ServicesSection />
+</section>
 
-<Gallery />
+ <section id="gallery">
+    <Gallery />
+</section>
 
-<Promotions />
 
-<Contact/>
+<section id="promotions">
+    <Promotions />
+</section>
+
+<section id="contact">
+    <Contact />
+</section>
 
 <Footer/>
 
