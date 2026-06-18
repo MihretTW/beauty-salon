@@ -1,72 +1,121 @@
-import { supabase } from "@/lib/supabase";
+"use client";
+
+import {useState} from "react";
+import {supabase} from "../../../lib/supabase";
 
 
-export default async function Gallery() {
+export default function GalleryAdmin(){
 
 
-  const { data: images } = await supabase
-    .from("gallery")
-    .select("*")
-    .order("id", { ascending: false });
-
-
-
-  return (
-
-    <section className="py-20 px-10 bg-[#fff8f3]">
-
-
-      <h2 className="text-4xl font-bold text-center mb-12 text-[#5c4033]">
-        Our Gallery
-      </h2>
+const [file,setFile]=useState<File|null>(null);
+const [title,setTitle]=useState("");
 
 
 
-      <div className="grid md:grid-cols-4 gap-6">
+async function uploadImage(){
 
 
-        {images?.map((image)=>(
-
-
-          <div
-          key={image.id}
-          className="rounded-xl overflow-hidden shadow-lg"
-          >
-
-
-            <img
-
-              src={image.image_url}
-
-              alt={image.title || "Salon image"}
-
-              className="w-full h-72 object-cover hover:scale-110 transition"
-
-            />
+if(!file) return;
 
 
 
-            {image.title && (
-
-              <p className="p-3 text-center">
-                {image.title}
-              </p>
-
-            )}
-
-
-          </div>
-
-
-        ))}
+const filename =
+Date.now()+"-"+file.name;
 
 
 
-      </div>
+const { error } = await supabase.storage
+  .from("gallery")
+  .upload(filename, file, {
+    cacheControl: "3600",
+    upsert: false,
+  });
 
 
-    </section>
+if(error){
+  console.log(error);
+  alert(error.message);
+  return;
+}
 
-  );
+
+
+const {data}=supabase.storage
+.from("gallery")
+.getPublicUrl(filename);
+
+
+
+await supabase
+.from("gallery")
+.insert({
+
+image_url:data.publicUrl,
+title
+
+});
+
+
+
+alert("Uploaded");
+
+
+}
+
+
+
+return (
+
+<div className="p-10">
+
+
+<h1 className="text-3xl font-bold">
+Upload Gallery Image
+</h1>
+
+
+
+<input
+
+type="file"
+
+className="mt-5"
+
+onChange={(e)=>
+setFile(e.target.files?.[0] || null)
+}
+
+/>
+
+
+
+<input
+
+className="border p-3 block mt-5"
+
+placeholder="Image title"
+
+onChange={(e)=>setTitle(e.target.value)}
+
+/>
+
+
+
+<button
+
+onClick={uploadImage}
+
+className="mt-5 bg-pink-500 text-white px-6 py-3 rounded"
+
+>
+
+Upload
+
+</button>
+
+
+</div>
+
+)
 
 }
