@@ -4,3 +4,7 @@
  --gold:#c9a227;
  --brown:#5c4033;
 }
+
+html {
+ scroll-behavior: smooth;
+}

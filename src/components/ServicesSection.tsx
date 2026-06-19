@@ -26,8 +26,20 @@ export default async function ServicesSection() {
 
           <div
             key={service.id}
-            className="bg-white rounded-2xl shadow-lg p-6"
+            className="bg-white
+rounded-2xl
+shadow-lg
+p-6
+hover:-translate-y-2
+transition"
           >
+
+            {service.image && (
+
+<img src={service.image}
+className="h-48 w-full object-cover rounded-xl"/>
+
+)}
 
 
             <h3 className="text-2xl font-semibold">

@@ -1,16 +1,42 @@
+import "./globals.css";
+import SalonSchema from "../components/SalonSchema";
+
+
 export const metadata = {
-  title: "Beauty Salon",
-  description: "Best beauty salon website",
+
+icons:{
+icon:"/logo.png"
+},
+
+title: "Eden Beauty Salon",
+
+description:
+"Professional hair, makeup and nail services. Book your beauty appointment today.",
+
 };
 
+
 export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  return (
-    <html lang="en">
-      <body>{children}</body>
-    </html>
-  );
+children,
+}:{
+children:React.ReactNode
+}){
+
+
+return (
+
+<html lang="en">
+
+<body>
+
+<SalonSchema />
+
+{children}
+
+</body>
+
+</html>
+
+)
+
 }
