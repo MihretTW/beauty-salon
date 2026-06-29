@@ -11,7 +11,7 @@ export default async function ServicesSection() {
 
   return (
 
-    <section className="py-20 px-10 bg-[#fff8f3]">
+    <section className="py-20 px-10 bg-gradient-to-b from-[#fff8f3] to-[#fce4ec]">
 
 
       <h2 className="text-4xl font-bold text-center mb-12 text-[#5c4033]">
@@ -31,28 +31,30 @@ rounded-2xl
 shadow-lg
 p-6
 hover:-translate-y-2
-transition"
+transition
+border-2 border-pink-100
+hover:border-pink-300"
           >
 
             {service.image && (
 
 <img src={service.image}
-className="h-48 w-full object-cover rounded-xl"/>
+className="h-48 w-full object-cover rounded-xl border-2 border-pink-200"/>
 
 )}
 
 
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-2xl font-semibold text-[#5c4033]">
               {service.name}
             </h3>
 
 
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 text-[#8b6f5c]">
               {service.description}
             </p>
 
 
-            <p className="mt-5 font-bold text-pink-600">
+            <p className="mt-5 font-bold text-[#e8a0b0] text-xl">
               {service.price} ETB
             </p>
 

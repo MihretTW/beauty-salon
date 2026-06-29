@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="py-20 px-10 bg-white">
+    <section className="py-20 px-10 bg-gradient-to-b from-white to-[#fff8f3]">
 
       <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-10 items-center">
 
@@ -10,7 +10,7 @@ export default function About() {
           <img
             src="/images/salon.jpg"
             alt="Beauty salon"
-            className="rounded-2xl shadow-lg"
+            className="rounded-2xl shadow-xl border-4 border-pink-200"
           />
         </div>
 
@@ -19,12 +19,12 @@ export default function About() {
         {/* text */}
         <div>
 
-          <h2 className="text-4xl font-bold text-[#5c4033]">
+          <h2 className="text-4xl font-bold text-[#5c4033] mb-4">
             About Eden Beauty
           </h2>
 
 
-          <p className="mt-5 text-gray-600 leading-8">
+          <p className="mt-5 text-[#8b6f5c] leading-8 text-lg">
 
             We believe beauty is about confidence.
             Our professional team provides high quality
@@ -34,7 +34,7 @@ export default function About() {
           </p>
 
 
-          <button className="mt-6 px-7 py-3 rounded-full bg-pink-500 text-white">
+          <button className="mt-6 px-7 py-3 rounded-full bg-[#e8a0b0] hover:bg-[#f7c8d8] text-white transition-colors shadow-md">
 
             Learn More
 
