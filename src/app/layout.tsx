@@ -27,7 +27,7 @@ return (
 
 <html lang="en">
 
-<body>
+<body className="bg-[#fff8f3] text-gray-800">
 
 <SalonSchema />
 

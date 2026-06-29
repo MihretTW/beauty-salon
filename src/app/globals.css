@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root{
     --cream:#fff8f3;
     --pink:#f7c8d8;
@@ -30,4 +31,153 @@ a {
 
 button {
     transition: all 0.3s ease;
+=======
+@import "tailwindcss";
+
+:root {
+  --cream: #fff8f3;
+  --pink: #f7c8d8;
+  --pink-dark: #e8a0b8;
+  --gold: #c9a227;
+  --gold-light: #d4b54a;
+  --brown: #5c4033;
+  --brown-light: #7a5a4a;
+  --rose: #fce4ec;
+  --white: #ffffff;
+  --gray-100: #f7f7f7;
+  --gray-200: #e5e5e5;
+  --gray-600: #666666;
+  --gray-800: #333333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--pink);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--pink-dark);
+}
+
+/* Smooth transitions */
+a {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+/* Image hover effects */
+img {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Card hover effects */
+.hover-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(92, 64, 51, 0.15);
+}
+
+/* Button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--pink-dark) 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(247, 200, 216, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(247, 200, 216, 0.6);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(201, 162, 39, 0.4);
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(201, 162, 39, 0.6);
+}
+
+/* Section animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Gradient backgrounds */
+.bg-gradient-cream {
+  background: linear-gradient(180deg, var(--cream) 0%, var(--rose) 100%);
+}
+
+.bg-gradient-pink {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--rose) 100%);
+}
+
+/* Text gradients */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Decorative elements */
+.decorative-line {
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold) 0%, var(--pink) 100%);
+  border-radius: 2px;
+  margin: 1rem auto;
+>>>>>>> f27b241819771c371e30b0eab833e450f90b3e06
 }
