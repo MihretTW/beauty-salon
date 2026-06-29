@@ -11,48 +11,46 @@ export default async function ServicesSection() {
 
   return (
 
-    <section className="py-20 px-10 bg-[#fff8f3]">
+    <section className="py-20 md:py-32 px-6 md:px-10 bg-gradient-cream">
 
 
-      <h2 className="text-4xl font-bold text-center mb-12 text-[#5c4033]">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#5c4033]">
         Our Services
       </h2>
 
+      <div className="decorative-line"></div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-12">
 
 
         {services?.map((service) => (
 
           <div
             key={service.id}
-            className="bg-white
-rounded-2xl
-shadow-lg
-p-6
-hover:-translate-y-2
-transition"
+            className="bg-white rounded-3xl shadow-xl p-6 hover-card group"
           >
 
             {service.image && (
 
 <img src={service.image}
-className="h-48 w-full object-cover rounded-xl"/>
+alt={service.name}
+className="h-48 w-full object-cover rounded-2xl mb-6 group-hover:scale-105 transition-transform duration-300"/>
 
 )}
 
 
-            <h3 className="text-2xl font-semibold">
+            <h3 className="text-2xl font-semibold text-gray-800">
               {service.name}
             </h3>
 
 
-            <p className="mt-3 text-gray-600">
+            <p className="mt-3 text-gray-600 leading-relaxed">
               {service.description}
             </p>
 
 
-            <p className="mt-5 font-bold text-pink-600">
+            <p className="mt-5 font-bold text-pink-600 text-xl">
               {service.price} ETB
             </p>
 

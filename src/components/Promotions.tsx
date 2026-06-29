@@ -20,16 +20,18 @@ if(error){
 
 return (
 
-<section className="py-20 px-10 bg-pink-50">
+<section className="py-20 md:py-32 px-6 md:px-10 bg-gradient-pink">
 
 
-<h2 className="text-4xl font-bold text-center mb-10">
+<h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-[#5c4033]">
 Latest Offers
 </h2>
 
+<div className="decorative-line"></div>
 
 
-<div className="grid md:grid-cols-3 gap-8">
+
+<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-12">
 
 
 
@@ -40,17 +42,17 @@ Latest Offers
 
 key={item.id}
 
-className="bg-white rounded-xl shadow p-6"
+className="bg-white rounded-3xl shadow-xl p-8 hover-card border-2 border-pink-100"
 
 >
 
 
-<h3 className="text-2xl font-bold">
+<h3 className="text-2xl font-bold text-gray-800">
 {item.title}
 </h3>
 
 
-<p className="mt-3">
+<p className="mt-4 text-gray-600 leading-relaxed">
 {item.description}
 </p>
 
